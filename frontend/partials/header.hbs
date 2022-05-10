@@ -1,0 +1,225 @@
+<header>
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container-fluid">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/en/9/91/Rajiv_Gandhi_Institute_of_Petroleum_Technology.png"
+        alt=""
+        width="30"
+        height="24"
+        class="d-inline-block align-text-top"
+      />
+
+      <a class="navbar-brand" href="#"><b>RGIPT</b></a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a
+              class="nav-link active pt-2"
+              aria-current="page"
+              href="#"
+            >Home</a>
+          </li>
+
+        </ul>
+        <form class="d-flex">
+          <a
+            class="btn btn-outline-success mx-1"
+            data-bs-toggle="modal"
+            href="#exampleModalToggle"
+            role="button"
+          >Login</a>
+          <a
+            class="btn btn-outline-primary mx-1"
+            data-bs-toggle="modal"
+            href="#exampleModalToggle2"
+            role="button"
+          >Signup</a>
+
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div
+    class="modal fade"
+    id="exampleModalToggle"
+    aria-hidden="true"
+    aria-labelledby="exampleModalToggleLabel"
+    tabindex="-1"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalToggleLabel">Sign In</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <form action="logging" method="post">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <input
+                type="email"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+                name="email"
+              />
+              <div id="emailHelp" class="form-text">We'll never share your email
+                with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label
+                for="exampleInputPassword1"
+                class="form-label"
+              >Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="exampleInputPassword1"
+                name="password"
+              />
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button
+            class="btn btn-outline-secondary"
+            data-bs-target="#exampleModalToggle2"
+            data-bs-toggle="modal"
+          >Go for Signup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="modal fade"
+    id="exampleModalToggle2"
+    aria-hidden="true"
+    aria-labelledby="exampleModalToggleLabel2"
+    tabindex="-1"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalToggleLabel2">Sign Up</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <form action="secure" method="post" oninput='cpassword.setCustomValidity(cpassword.value != password.value ? "Passwords do not match." : "")'>
+            <div class="mb-3">
+              <label for="username" class="form-label">Full Name</label>
+              <input
+                type="string"
+                class="form-control"
+                id="username"
+                name="name"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <input
+                type="email"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+                name="email"
+              />
+              <div id="emailHelp" class="form-text">We'll never share your email
+                with anyone else.</div>
+            </div>
+            <div class="row">
+              <div class="mb-3 col-6">
+                <label for="Batch" class="form-label">Batch (20XX)</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="Batch"
+                  name="batch"
+                />
+              </div>
+              <div class="mb-3 col-6">
+                <label for="roll" class="form-label">Roll number</label>
+                <input
+                  type="string"
+                  class="form-control"
+                  id="roll"
+                  name="roll"
+                />
+              </div>
+            </div>
+            <div class="mb-3">
+              <label
+                for="exampleInputPassword2"
+                class="form-label"
+              >Password</label>
+              <input
+                minlength="7"
+                type="password"
+                class="form-control"
+                id="exampleInputPassword2"
+                name="password"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword3" class="form-label">Confirm
+                Password</label>
+              <input
+                minlength="7"
+                type="password"
+                class="form-control"
+                id="exampleInputPassword3"
+                name="cpassword"
+                
+              />
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button
+            class="btn btn-outline-secondary"
+            data-bs-target="#exampleModalToggle"
+            data-bs-toggle="modal"
+          >Go for Signin</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+<script>
+  //var checkpass = function () 
+  //{ 
+  // let A =
+  //document.getElementById('"exampleInputPassword2').value; let B =
+  //document.getElementById('"exampleInputPassword3').value; if(A===B){ return
+  //true; }
+  // return true;
+   //}
+
+</script>
