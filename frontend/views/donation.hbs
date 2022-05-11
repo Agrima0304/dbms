@@ -10,301 +10,35 @@
     <title>Alumni Donation</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-custom navbar-mainbg">
-        <a class="navbar-brand navbar-logo" href="file:///C:/Users/SAMRIDDHI%20SINGH/Downloads/3.html"><img class="profile_img" src="https://th.bing.com/th/id/OIP.VyjM2eNLCuTr_pZgWcuDlwHaHa?w=203&h=203&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="" height="40px" width="40px">
-               Hello XYZ !!!</a>
-        <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fas fa-bars text-white"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-                <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
-                <li class="nav-item">
-                    <a class="nav-link" href="javascript:void(0);">Dashboard</a>
-                </li>
-                
-                <li>
-                    <a><img src="https://upload.wikimedia.org/wikipedia/en/9/91/Rajiv_Gandhi_Institute_of_Petroleum_Technology.png" height="40px" width="40px"></a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js" integrity="sha384-7aThvCh9TypR7fIc2HV4O/nFMVCBwyIUKL8XCtKE+8xgCgl/PQGuFsvShjr74PBp" crossorigin="anonymous"></script>
-	<div class="container">
-		<div class="row">
-			<div class="col">
-				<h1 class="py-4">Alumni Donation and Registration Form</h1>
-			</div>
-		</div>
-		<section class="bg-dark text-light">
-			<div class="accordion" id="accordionInfo">
-				<div class="card bg-dark text-light">
-					<div class="card-header" id="headingInfo">
-						<h2 class="mb-0">
-              <button
-                class="btn btn-link"
-                type="button"
-                data-toggle="collapse"
-                data-target="#personalInfo"
-                aria-expanded="true"
-                aria-controls="personalInfo"
-              >
-                Personal Information
-              </button>
-            </h2>
-					</div>
-					<div id="personalInfo" class="collapse show" aria-labelledby="headingInfo" data-parent="#accordionInfo">
-						<div class="card-body">
-							<form>
-								<div class="form-row">
-									<div class="form-group col-md-3">
-										<label for="exampleFormControlInput1a">First Name*</label>
-										<input type="text" class="form-control" id="exampleFormControlInput1a" />
-									</div>
-                  <div class="form-group col-md-3">
-										<label for="exampleFormControlInput1c">Last Name*</label>
-										<input type="text" class="form-control" id="exampleFormControlInput1c" />
-									</div>
-									<div class="form-group col-6">
-										<label for="exampleFormControlInput2">Street Address*</label>
-										<input type="text" class="form-control" id="exampleFormControlInput2" />
-									</div>
-                  <div class="form-group col-4">
-										<label for="exampleFormControlInput2">City*</label>
-										<input type="text" class="form-control" id="exampleFormControlInput2" />
-									</div>
-                  <div class="form-group col-4">
-										<label for="exampleFormControlInput2">State*</label>
-										<input type="text" class="form-control" id="exampleFormControlInput2" />
-									</div>
-                  <div class="form-group col-4">
-										<label for="exampleFormControlInput2">Zip*</label>
-										<input type="text" class="form-control" id="exampleFormControlInput2" />
-									</div>
-								</div>
-								<!--end of form-row-->
-								<div class="form-row">
-									<div id="spouseName" class="form-group col-md-4">
-										<label for="exampleFormControlInput1b">Spouse's Name</label>
-										<input type="text" class="form-control" id="exampleFormControlInput1b" />
-									</div>
-									<div class="form-group col-md-4">
-										<label for="exampleFormControlInput1b">Phone Number*</label>
-										<input type="number" class="form-control" id="exampleFormControlInput1b" />
-									</div>
-									<div class="form-group col-md-4">
-										<label for="exampleFormControlInput3">Email*</label>
-										<input type="email" class="form-control" id="exampleFormControlInput3" />
-									</div>
-								</div>
-								<!--end of form-row-->
-								<div class="form-row">
-									<div class="form-group col-md-6">
-  									<div>How are you connected?*</div>
-                    <div class="form-check">
-                      <input class="form-check-input" name="who" type="radio" value="" id="alumnus">
-                      <label class="form-check-label" for="defaultCheck1">
-                        Alumnus of RGIPT BTECH
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" name="who" type="radio" value="" id="alumna">
-                      <label class="form-check-label" for="defaultCheck1">
-                        Alumnus of RGIPT MBA
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" name="parent" type="radio" value="" id="alumna">
-                      <label class="form-check-label" for="defaultCheck1">
-                        Alumnus of RGIPT PHD 
-                      </label>
-                    </div>
-									</div>
-									<div class="form-group col-md-6" id="yearAttended">
-										<label for="exampleFormControlSelect1">What year did you attend?</label>
-										<select class="form-control" id="exampleFormControlSelect1">
-											<option>2008</option>
-											<option>2009</option>
-											<option>2010</option>
-											<option>2011</option>
-											<option>2012</option>
-											<option>2013</option>
-											<option>2014</option>
-											<option>2015</option>
-											<option>2016</option>
-											<option>2017</option>
-											<option>2018</option>
-										</select>
-									</div>
-									
-								</div>
-								<!--end of form-row-->
-								<div id="spouseYes" class="form-row">
-									<div id="spouseRadio" class="form-group col-6">
-										<p for="spouseInfo">Is your spouse:</p>
-                    <div class="form-check form-check-inline">
-											<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="did_not_attend" checked>
-											<label class="form-check-label" for="exampleRadios3">Not an alumnus/alumna</label>
-										</div>
-										<div class="form-check form-check-inline">
-											<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="alumnus">
-											<label class="form-check-label" for="exampleRadios1">An alumnus</label>
-										</div>
-										<div class="form-check form-check-inline">
-											<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="alumna">
-											<label class="form-check-label" for="exampleRadios2">An alumna</label>
-										</div>
-									</div>
-                  
-								</div>
-								<!--end of form-row-->
-                <div id="companyDonate" class="form-row">
-									<div id="companyRadio" class="form-group col-md-6">
-										<p>Will your company match your contribution?</p>
-                    <div class="form-check form-check-inline">
-											<input class="form-check-input" type="radio" name="compRadio" id="compRadio1" value="no" checked>
-											<label class="form-check-label" for="compRadio1">No</label>
-										</div>
-										<div class="form-check form-check-inline">
-											<input class="form-check-input" type="radio" name="compRadio" id="compRadio2" value="yes">
-											<label class="form-check-label" for="compRadio2">Yes</label>
-										</div>
-									</div>
-									<div id="companyName" class="form-group col-md-6">
-										<label for="compControlInput">Name of Company</label>
-										<input type="text" class="form-control" id="compControlInput" />
-									</div>
-								</div>
-                <!--end of form-row-->
-                <div class="form-row">
-                 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#donationLevel" aria-expanded="false" aria-controls="donationLevel">Pick Donation Level</button>
-                </div>
-							</form>
-						</div>
-					</div>
-				</div>
-				<div class="card bg-dark text-light">
-					<div class="card-header" id="headingDonation">
-						<h2 class="mb-0">
-              <button
-                class="btn btn-link collapsed"
-                type="button"
-                data-toggle="collapse"
-                data-target="#donationLevel"
-                aria-expanded="false"
-                aria-controls="donationLevel"
-              >
-                Donation/Ad Level
-              </button>
-            </h2>
-					</div>
-					<div id="donationLevel" class="collapse" aria-labelledby="headingDonation" data-parent="#accordionInfo">
-						<div class="card-body">
-            <form>
-            <div id="donorLevel" class="form-group">
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="level" id="level_pillar" value="100000">
-              <label class="form-check-label text-primary" for="level_pillar">
-                <span class="text-warning">"Scroll of Honor"</span> Pillar - $100,000
-              </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="level" id="level_grantor" value="75000">
-              <label class="form-check-label text-primary" for="level_pillar">
-                <span class="text-warning">"Scroll of Honor"</span> Grantor - $75,000
-              </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="level" id="level_builder" value="500000">
-              <label class="form-check-label text-primary" for="level_builder">
-                <span class="text-warning">"Scroll of Honor"</span> Builder - $50,000
-              </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="level" id="level_benefactor" value="36000">
-              <label class="form-check-label text-primary" for="level_benefactor">
-                <span class="text-warning">"Scroll of Honor"</span> Benefactor - $36,000
-              </label>
-            </div>
-            <div class="form-check">
-            <input class="form-check-input" type="radio" name="level" id="level_patron" value="25000">
-              <label class="form-check-label text-primary" for="level_patron">
-                <span class="text-warning">"Scroll of Honor"</span> Patron - $25,000
-              </label>
-            </div>
-            <div class="form-check">
-            <input class="form-check-input" type="radio" name="level" id="level_patron" value="25000">
-              <label class="form-check-label text-primary" for="level_patron">
-                <span class="text-warning">"Scroll of Honor"</span>  Founder - $18,000
-              </label>
-            </div>
-            <div class="form-check">
-            <input class="form-check-input" type="radio" name="level" id="level_patron" value="25000">
-              <label class="form-check-label text-primary" for="level_patron">
-                <span class="text-warning">"Scroll of Honor"</span> Scholarship - $10,000
-              </label>
-            </div>
-            <div class="form-check">
-            <input class="form-check-input" type="radio" name="level" id="level_guardian" value="5000">
-              <label class="form-check-label text-primary" for="level_guardian">
-                <span class="text-warning">"Scroll of Honor"</span> Guardian - $5,000
-              </label>
-            </div>
-            <div class="form-check">
-            <input class="form-check-input" type="radio" name="level" id="level_founder" value="3600">
-              <label class="form-check-label text-info" for="level_founder">
-                <span class="text-warning">"Scroll of Honor"</span> Founder - $3,600
-              </label>
-            </div>
-            <div class="form-check">
-            <input class="form-check-input" type="radio" name="level" id="level_founder" value="3600">
-              <label class="form-check-label text-info" for="level_founder">
-                <span class="text-warning">"Scroll of Honor"</span> Donor - $2,500
-              </label>
-            </div>
-            <div class="form-check">
-            <input class="form-check-input" type="radio" name="level" id="level_supporter" value="1800">
-              <label class="form-check-label text-info" for="level_supporter">
-                <span class="text-warning">"Scroll of Honor"</span> Supporter - $1,800
-              </label>
-            </div>
-            <div class="form-check">
-            <input class="form-check-input" type="radio" name="level" id="level_supporter" value="1800">
-              <label class="form-check-label text-info" for="level_supporter">
-                <span class="text-warning">"Scroll of Honor"</span> Friend - $1,000
-              </label>
-            </div>
-            
-           
-            </div>
-           
-            <div class="form-check">
-            <input class="form-check-input" type="radio" name="level" id="level_any" value="1">
-              <label class="form-check-label text-secondary" for="level_any">
-                 Choose any amount to donate
-              </label>
-            </div>
-          </div><!--end form-group-->
-          <button id="rsvpButton" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#journalAd" aria-expanded="false" aria-controls="journalAd">Create Your Journal Ad</button>
-              </form>
-            </div>
-					</div>
-				</div>
-        <div class="card bg-dark text-light">
-					<div class="card-header" id="headingJournal">
-						<h2 class="mb-0">
-              <button
-                class="btn btn-link collapsed"
-                type="button"
-                data-toggle="collapse"
-                data-target="#journalAd"
-                aria-expanded="false"
-                aria-controls="journalAd"
-              >
-                
-                <!--end of form-row-->
-           
+{{>navbar}}
+<div class="container col-md-8 col-xl-6 my-3 bg-dark text-light rounded">
+ <form class="m-3 p-2 pb-3" method="post" action="securedonate">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Address</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+  <label class="form-label">Mobile</label>
+    <div class="input-group mb-3">
+  <span class="input-group-text" id="basic-addon1">@</span>
+  <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+</div>
+   
+  </div>
+    <div class="mb-3">
+    <label  class="form-label">Amount</label>
+    <div class="input-group mb-3">
+  <span class="input-group-text">$</span>
+  <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+  <span class="input-group-text">.00</span>
+</div>
+    
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+  </div>       
 </body>
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js" integrity="sha384-7aThvCh9TypR7fIc2HV4O/nFMVCBwyIUKL8XCtKE+8xgCgl/PQGuFsvShjr74PBp" crossorigin="anonymous"></script>
 </html>

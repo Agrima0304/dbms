@@ -27,30 +27,30 @@
             <a
               class="nav-link active pt-2"
               aria-current="page"
-              href="#"
+              href="/"
             >Home</a>
           </li>
           <li class="nav-item">
             <a
               class="nav-link active pt-2"
               aria-current="page"
-              href="#"
+              href="/donate"
             >Donate</a>
           </li>
           <li class="nav-item">
             <a
               class="nav-link active pt-2"
               aria-current="page"
-              href="#"
+              href="/events"
             >Events</a>
           </li>
-
         </ul>
-        <form class="d-flex">
-          <p>Welcome {{name}}</p>
-          <a class="btn btn-outline-primary mx-1" role="button">Logout</a>
 
+        <form class="d-flex text-light" style="margin-left:0%">
+          <a class="btn btn-outline-light mx-1" role="button">Welcome {{user.name}}</a>
+          <a class="btn btn-outline-primary mx-1" role="button">Logout</a>
         </form>
+
       </div>
     </div>
   </nav>
