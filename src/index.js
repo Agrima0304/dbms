@@ -21,8 +21,6 @@ App.get('/', (req, res) => {
     res.render('index')
 })
 
-
-
 App.post('/logging', async (req, res) => {
     try {
         console.log(req.body)
@@ -49,18 +47,17 @@ App.post('/secure', async (req, res) => {
     }
 })
 
-
 App.get('/events', async (req, res) => {
-    if (!req.quary.year) {
+    if (req.quary == undefined) {
         const events = await Events.find({})
         try {
             res.render('schedule', { events })
         } catch (e) {
             console.log(e)
-        }
+        }   
     }
-    else{
-        const events = await Events.find({year:req.query.year,branch:req.quary.branch})
+    else {
+        const events = await Events.find({ branch: req.quary.branch })
         try {
             res.render('schedule', { events })
         } catch (e) {
@@ -99,7 +96,6 @@ App.get('/donate', async (req, res) => {
         res.status(500).send(error)
     }
 })
-
 
 App.post('/donatesecure', async (req, res) => {
     const events = await Events.find({})

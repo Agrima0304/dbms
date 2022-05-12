@@ -28,7 +28,7 @@ tr:nth-child(even) {
     {
         position: relative;
         margin-left: 10px;
-        padding: 5px;
+        padding: 1px;
         color:brown;
         background-color: indianred;
     } 
@@ -57,6 +57,7 @@ tr:nth-child(even) {
     #menu{
         position: relative;
         margin-left: 15px;
+        padding:3px;
     }
 </style>
 
@@ -68,22 +69,22 @@ tr:nth-child(even) {
     <h1>SEARCH ALUMNI ACTIVITIES/MEET</h1><br>
     <form action="events" method="get">
     <label for="f" id="f"> Branch</label>
-    <select id="menu" name="branch">
+    <select id="menu" name="branch" type="text">
         <option>Petroleum Engineering</option>
         <option>Chemical Engineering</option>
         <option>Computer Science Engineering </option>
         <option>Electronics Engineering</option>
     </select>
-    <label for="y" id="y">Year</label>
-    <select id="year" name="year">
+    {{!-- <label for="y" id="y">Year</label>
+    <select id="year" name="year" type="number">
         <option>2015</option>
         <option>2016</option>
         <option>2017</option>
         <option>2018</option>
         <option>2019</option>
-    </select>
+    </select> --}}
    
-    <button id="search" > Search </button>
+    <button id="search"  type="submit"> Search </button>
     </form>
     <caption id="cap">View Alumni Activities/Meet</caption>
     <table id="table">
