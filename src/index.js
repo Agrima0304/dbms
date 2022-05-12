@@ -18,7 +18,7 @@ App.set('views', viewsPath)
 hbs.registerPartials(partialsPath)
 App.use(bodyParser.json());
 App.use(bodyParser.urlencoded({ extended: true }));
-
+// made by asutosh prdhan not agrima
 App.get('/', (req, res) => {
     res.render('index')
 })
@@ -45,7 +45,7 @@ App.post('/adminentry', async (req, res) => {
         res.status(400).send()
     }
 })
-
+// made by asutosh prdhan not agrima
 App.post('/repadmin', async (req, res) => {
     try {
         //console.log(req.body)
@@ -58,6 +58,7 @@ App.post('/repadmin', async (req, res) => {
         res.status(400).send()
     }
 })
+// made by asutosh prdhan not agrima
 App.post('/secure', async (req, res) => {
     const data = req.body
     const user = new User(data)
@@ -72,7 +73,7 @@ App.post('/secure', async (req, res) => {
         res.status(400).send(e)
     }
 })
-
+// made by asutosh prdhan not agrima
 App.get('/events', async (req, res) => {
     if (req.quary == undefined) {
         const events = await Events.find({})
@@ -91,7 +92,7 @@ App.get('/events', async (req, res) => {
         }
     }
 })
-
+// made by asutosh prdhan not agrima
 App.post('/login', async (req, res) => {
     try {
         const user = await User.findByCredentials(req.body.email, req.body.password)
@@ -101,7 +102,7 @@ App.post('/login', async (req, res) => {
         res.status(400).send()
     }
 })
-
+// made by asutosh prdhan not agrima
 App.post('/logout', auth, async (req, res) => {
     try {
         req.user.tokens = req.user.tokens.filter((token) => {
@@ -114,7 +115,7 @@ App.post('/logout', auth, async (req, res) => {
         res.status(500).send()
     }
 })
-
+// made by asutosh prdhan not agrima
 App.get('/donate', async (req, res) => {
     try {
         res.render('donation')
@@ -122,17 +123,19 @@ App.get('/donate', async (req, res) => {
         res.status(500).send(error)
     }
 })
-
+// made by asutosh prdhan not agrima
 App.post('/donatesecure', async (req, res) => {
     //const events = await Events.find({})
-    const donate = new req.body
+    const donate = new Donate(req.body)
     try {
+        await donate.save();
         res.render('schedule', { events })
     } catch (e) {
         console.log(e)
     }
 })
-
+// made by asutosh prdhan not agrima
 App.listen(PORT, () => {
     console.log('App started on 3000')
-});
+}); 
+
