@@ -4,6 +4,7 @@ const path = require('path')
 const PORT = 3000 || process.env.PORT;
 const hbs = require('hbs')
 const App = express();
+const auth = require("../middleware/auth")
 var bodyParser = require('body-parser');
 const Events = require("../models/event");
 require('../db/database')
@@ -20,9 +21,7 @@ App.get('/', (req, res) => {
     res.render('index')
 })
 
-App.get('/donate', async (req, res) => {
-    res.render('donation')
-})
+
 
 App.post('/logging', async (req, res) => {
     try {
@@ -51,14 +50,24 @@ App.post('/secure', async (req, res) => {
 })
 
 
-// App.get('/events', async (req, res) => {
-//     const events = await Events.find({})
-//     try {
-//         res.render('schedule', { user, token })
-//     } catch (e) {
-//         console.log(e)
-//     }
-// })
+App.get('/events', async (req, res) => {
+    if (!req.quary.year) {
+        const events = await Events.find({})
+        try {
+            res.render('schedule', { events })
+        } catch (e) {
+            console.log(e)
+        }
+    }
+    else{
+        const events = await Events.find({year:req.query.year,branch:req.quary.branch})
+        try {
+            res.render('schedule', { events })
+        } catch (e) {
+            console.log(e)
+        }
+    }
+})
 
 App.post('/login', async (req, res) => {
     try {
@@ -70,7 +79,7 @@ App.post('/login', async (req, res) => {
     }
 })
 
-App.post('/logout', async (req, res) => {
+App.post('/logout', auth, async (req, res) => {
     try {
         req.user.tokens = req.user.tokens.filter((token) => {
             return token.token !== req.token
@@ -80,6 +89,24 @@ App.post('/logout', async (req, res) => {
         res.send()
     } catch (e) {
         res.status(500).send()
+    }
+})
+
+App.get('/donate', async (req, res) => {
+    try {
+        res.render('donation')
+    } catch (error) {
+        res.status(500).send(error)
+    }
+})
+
+
+App.post('/donatesecure', async (req, res) => {
+    const events = await Events.find({})
+    try {
+        res.render('schedule', { events })
+    } catch (e) {
+        console.log(e)
     }
 })
 

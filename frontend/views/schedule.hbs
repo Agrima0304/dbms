@@ -66,51 +66,47 @@ tr:nth-child(even) {
 {{>navbar}}
 
     <h1>SEARCH ALUMNI ACTIVITIES/MEET</h1><br>
-    <form onsubmit="gofind()">
+    <form action="events" method="get">
     <label for="f" id="f"> Branch</label>
-    <select id="menu">
+    <select id="menu" name="branch">
         <option>Petroleum Engineering</option>
         <option>Chemical Engineering</option>
         <option>Computer Science Engineering </option>
         <option>Electronics Engineering</option>
     </select>
     <label for="y" id="y">Year</label>
-    <select id="year">
+    <select id="year" name="year">
         <option>2015</option>
         <option>2016</option>
         <option>2017</option>
         <option>2018</option>
         <option>2019</option>
     </select>
-    <label for="months" id="mo"> Months</label>
-    <input type="month" id="g">
+   
     <button id="search" > Search </button>
     </form>
     <caption id="cap">View Alumni Activities/Meet</caption>
     <table id="table">
         <tr id="1">
-            <th>Si No.</th>
             <th>Branch</th>
             <th>Year</th>
             <th>Event Description</th>
-            <th>Images</th>
         </tr>
-        
-        <tr id="2">
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+        {{#each events}}
+        <tr>
+            <td>{{this.branch}}</td>
+            <td>{{this.year}}</td>
+            <td>{{this.description}}</td>
         </tr>
+        {{/each}}
     </table>
+  
+        
     {{!-- {{log user}} --}}
-    <input type="text" id="user" value="{{token}}"></input>
-</body>
+    
 </html>
 <script>
-    let token=document.getElementById('user');
-    localStorage.setItem('token',token.value);
-    console.log(localStorage.getItem('token'))
-    token.style.display = "none";
+    
+   let token=localStorage.getItem('token',token.value);
+
 </script>

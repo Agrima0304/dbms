@@ -59,10 +59,6 @@ const userSchema = new mongoose.Schema({
     timestamps: true
 })
 
-
-
-
-
 userSchema.methods.generateAuthToken = async function () {
     const user = this
     const token = jwt.sign({ _id: user._id.toString() }, 'rgiptalumniportal')
@@ -81,11 +77,9 @@ userSchema.statics.findByCredentials = async (email, password) => {
     }
 
     const isMatch = await bcrypt.compare(password, user.password)
-
     if (!isMatch) {
         throw new Error('Unable to login')
     }
-
     return user
 }
 
