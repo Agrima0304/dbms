@@ -19,6 +19,6 @@ const donateSchema = new mongoose.Schema({
     timestamps: true
 })
 
-const Task = mongoose.model('Task', taskSchema)
+const Donate = mongoose.model('TDonate', donateSchema)
 
-module.exports = Task
+module.exports = Donate
