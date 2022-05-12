@@ -36,7 +36,7 @@ App.post('/logging', async (req, res) => {
 App.post('/adminentry', async (req, res) => {
     try {
         if (req.body.email == "agrima@gmail.com" && req.body.password == "agrima") {
-            render('admin');
+            res.render('admin');
         }
         else {
             res.send("You are not allowed.")
@@ -46,11 +46,14 @@ App.post('/adminentry', async (req, res) => {
     }
 })
 
-App.post('/admin', async (req, res) => {
+App.post('/repadmin', async (req, res) => {
     try {
-        const event = new Events(req,body)
-        await event.save()
-        render('admin');
+        //console.log(req.body)
+        const event = new Events(req.body)
+        console.log(event)
+        const rew=await event.save()
+        console.log(rew)
+        res.render('admin');
     } catch (error) {
         res.status(400).send()
     }
