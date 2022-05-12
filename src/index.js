@@ -7,6 +7,8 @@ const App = express();
 const auth = require("../middleware/auth")
 var bodyParser = require('body-parser');
 const Events = require("../models/event");
+const res = require("express/lib/response");
+const { render } = require("express/lib/response");
 require('../db/database')
 const publicDirectoryPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../frontend/views')
@@ -31,7 +33,28 @@ App.post('/logging', async (req, res) => {
         res.status(400).send(e)
     }
 })
+App.post('/adminentry', async (req, res) => {
+    try {
+        if (req.body.email == "agrima@gmail.com" && req.body.password == "agrima") {
+            render('admin');
+        }
+        else {
+            res.send("You are not allowed.")
+        }
+    } catch (error) {
+        res.status(400).send()
+    }
+})
 
+App.post('/admin', async (req, res) => {
+    try {
+        const event = new Events(req,body)
+        await event.save()
+        render('admin');
+    } catch (error) {
+        res.status(400).send()
+    }
+})
 App.post('/secure', async (req, res) => {
     const data = req.body
     const user = new User(data)
@@ -54,7 +77,7 @@ App.get('/events', async (req, res) => {
             res.render('schedule', { events })
         } catch (e) {
             console.log(e)
-        }   
+        }
     }
     else {
         const events = await Events.find({ branch: req.quary.branch })
@@ -98,7 +121,8 @@ App.get('/donate', async (req, res) => {
 })
 
 App.post('/donatesecure', async (req, res) => {
-    const events = await Events.find({})
+    //const events = await Events.find({})
+    const donate = new req.body
     try {
         res.render('schedule', { events })
     } catch (e) {

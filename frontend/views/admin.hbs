@@ -1,0 +1,76 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="6.jss"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css"
+      integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css"
+    /><link rel="stylesheet" href="6.css" />
+    <title>Admin</title>
+  </head>
+  <body>
+
+    <br /><br /><br /><br />
+    <div class="container col-md-8 col-xl-6 my-3 bg-dark text-light rounded">
+      <h1 class="mx-3 mt-3">Admin - create Event</h1>
+      <hr color="white" />
+      <form class="m-3 p-2 pb-3" method="post" action="donatesecure">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Description</label>
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            name="description "
+          />
+        </div>
+        <div class="mb-3">
+          <label for="year" class="form-label">Year</label>
+          <input
+            type="number"
+            class="form-control"
+            id="year"
+            aria-describedby="emailHelp"
+            name="year"
+          />
+        </div>
+        <select
+          class="form-select"
+          aria-label="Default select example"
+          name="branch"
+        >
+          <option selected>Open this select menu</option>
+          <option value="cse">Computr Science</option>
+          <option value="ec">Electronics</option>
+          <option value="pe">Petroleum Engineering</option>
+          <option value="ce">Chemical Engineering</option>
+        </select>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </body>
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js"
+    integrity="sha384-7aThvCh9TypR7fIc2HV4O/nFMVCBwyIUKL8XCtKE+8xgCgl/PQGuFsvShjr74PBp"
+    crossorigin="anonymous"
+  ></script>
+</html>
