@@ -12,13 +12,13 @@ const donateSchema = new mongoose.Schema({
     },
     owner: {
         type: mongoose.Schema.Types.ObjectId,
-        required: true,
+        //required: true,
         ref: 'User'
     }
 }, {
     timestamps: true
 })
 
-const Donate = mongoose.model('TDonate', donateSchema)
+const Donate = mongoose.model('Donate', donateSchema)
 
 module.exports = Donate
