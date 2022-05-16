@@ -64,6 +64,7 @@
           </select>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
+        <button  class="btn btn-primary" onclick="goout()">Logout</button>
       </form>
     </div>
   </body>
@@ -82,4 +83,9 @@
     integrity="sha384-7aThvCh9TypR7fIc2HV4O/nFMVCBwyIUKL8XCtKE+8xgCgl/PQGuFsvShjr74PBp"
     crossorigin="anonymous"
   ></script>
+  <script>
+    function goout(){
+      location.href='/';
+    }
+  </script>
 </html>
