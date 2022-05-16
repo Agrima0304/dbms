@@ -18,7 +18,7 @@
   </head>
   <body>
 
-    <br /><br /><br /><br />
+    <br />  <br /><br /><br />
     <div class="container col-md-8 col-xl-6 my-3 bg-dark text-light rounded">
       <h1 class="mx-3 mt-3">Admin - create Event</h1>
       <hr color="white" />
@@ -46,16 +46,15 @@
         </div>
         <div class="mb-3">
           <label for="branch" class="form-label">Branch</label>
-          <br>
+          <br />
           <select
             id="branch"
             class="form-select rounded p-1"
             aria-label="Default select example"
             name="branch"
             style="width: 100%;"
-            
           >
-          
+
             <option selected>Open this select menu</option>
             <option value="cse">Computr Science</option>
             <option value="ec">Electronics</option>
@@ -63,9 +62,15 @@
             <option value="ce">Chemical Engineering</option>
           </select>
         </div>
+
         <button type="submit" class="btn btn-primary">Submit</button>
-        <button  class="btn btn-primary" onclick="goout()">Logout</button>
+
       </form>
+      <button
+        class="btn btn-secondary"
+        style="right: 0; position:absolute;"
+        onclick="goout()"
+      >Logout</button>
     </div>
   </body>
   <script
@@ -84,8 +89,6 @@
     crossorigin="anonymous"
   ></script>
   <script>
-    function goout(){
-      location.href='/';
-    }
+    function goout(e){ location.href='/'; }
   </script>
 </html>

@@ -11,16 +11,27 @@
       crossorigin="anonymous"
     />
     <style>
-      .content
+       .content{
+ position:absolute;
+ z-index: 2;
+ width: 100%;
+        height: 100%;
+        text-align: center;
+       }
+     
+      .content-in
       {
-        background-color:black;
+        
+       position: relative;
+        
         opacity:0.6;
         border-radius:.25em;
-        left:50%;
+        display: inline-block;
+         
         padding:30px;
         text-align:center;
-        position:absolute;
-        z-index: 2;
+         z-index: 5;
+        
       }
     </style>
 
@@ -29,11 +40,13 @@
 
 {{>header}}
 
-<div class="content" >
+<div class="content " >
+  <div class="contet-in bg-dark  rounded" style=" --bs-bg-opacity: .8; margin-top:10%; width:max-content;margin-left:15%; padding: 3%;  ">
   <h1 style="color: white;">Alumni Portal</h1>
   <br>
   <br>
   <h1 style="color: white;">Welcome To Your Alma Mater</h1>
+  </div>
 </div>
 
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="height: 100vh; overflow:hidden;">
@@ -42,10 +55,10 @@
       <img src="https://www.rgipt.ac.in/site/writereaddata/uploadedImages/Thumbnail/I_201906121422334813.jpg" class="d-block w-100" alt="..." style=" height: 100vh; width:100vw;">
     </div>
     <div class="carousel-item">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaY5r4xXCgijm5PQbLVONZ5ZHfeLn8EsnnFw&usqp=CAU" class="d-block w-100" alt="..." height: 100vh; width:100vw;">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaY5r4xXCgijm5PQbLVONZ5ZHfeLn8EsnnFw&usqp=CAU" class="d-block w-100" alt="..." style=" height: 100vh; width:100vw;">
     </div>
     <div class="carousel-item">
-      <img src="https://media-exp1.licdn.com/dms/image/C4D1BAQEL-NR4SLWZ7A/company-background_10000/0/1519798588229?e=2147483647&v=beta&t=GnvcYFTegZSmUQEgTJ1Zr35DjQTVrQmKDCl42v5VUVg" class="d-block w-100" alt="..." height: 100vh; width:100vw;">
+      <img src="https://media-exp1.licdn.com/dms/image/C4D1BAQEL-NR4SLWZ7A/company-background_10000/0/1519798588229?e=2147483647&v=beta&t=GnvcYFTegZSmUQEgTJ1Zr35DjQTVrQmKDCl42v5VUVg" class="d-block w-100" alt="..." style=" height: 100vh; width:100vw;">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
