@@ -42,18 +42,27 @@
             aria-describedby="emailHelp"
             name="year"
           />
+
         </div>
-        <select
-          class="form-select mb-3"
-          aria-label="Default select example"
-          name="branch"
-        >
-          <option selected>Open this select menu</option>
-          <option value="cse">Computr Science</option>
-          <option value="ec">Electronics</option>
-          <option value="pe">Petroleum Engineering</option>
-          <option value="ce">Chemical Engineering</option>
-        </select>   
+        <div class="mb-3">
+          <label for="branch" class="form-label">Branch</label>
+          <br>
+          <select
+            id="branch"
+            class="form-select rounded p-1"
+            aria-label="Default select example"
+            name="branch"
+            style="width: 100%;"
+            
+          >
+          
+            <option selected>Open this select menu</option>
+            <option value="cse">Computr Science</option>
+            <option value="ec">Electronics</option>
+            <option value="pe">Petroleum Engineering</option>
+            <option value="ce">Chemical Engineering</option>
+          </select>
+        </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
     </div>
