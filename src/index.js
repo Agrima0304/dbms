@@ -7,6 +7,7 @@ const App = express();
 const auth = require("../middleware/auth")
 var bodyParser = require('body-parser');
 const Events = require("../models/event");
+const Donate = require("../models/donate");
 const res = require("express/lib/response");
 const { render } = require("express/lib/response");
 require('../db/database')
@@ -18,7 +19,7 @@ App.set('views', viewsPath)
 hbs.registerPartials(partialsPath)
 App.use(bodyParser.json());
 App.use(bodyParser.urlencoded({ extended: true }));
-// made by asutosh prdhan not agrima
+
 App.get('/', (req, res) => {
     res.render('index')
 })
@@ -28,7 +29,7 @@ App.post('/logging', async (req, res) => {
         console.log(req.body)
         const user = await User.findByCredentials(req.body.email, req.body.password)
         const token = await user.generateAuthToken()
-        res.render('schedule', { user, token })
+        res.render('index', { user, token })
     } catch (e) {
         res.status(400).send(e)
     }
@@ -45,20 +46,19 @@ App.post('/adminentry', async (req, res) => {
         res.status(400).send()
     }
 })
-// made by asutosh prdhan not agrima
+
 App.post('/repadmin', async (req, res) => {
     try {
         //console.log(req.body)
         const event = new Events(req.body)
         console.log(event)
-        const rew=await event.save()
+        const rew = await event.save()
         console.log(rew)
         res.render('admin');
     } catch (error) {
         res.status(400).send()
     }
 })
-// made by asutosh prdhan not agrima
 App.post('/secure', async (req, res) => {
     const data = req.body
     const user = new User(data)
@@ -67,16 +67,16 @@ App.post('/secure', async (req, res) => {
         const token = await user.generateAuthToken()
         const events = await Events.find({})
         console.log(token)
-        res.status(201).render('schedule', { user, token, events })
+        res.status(201).render('index', { user, token })
     } catch (e) {
         console.log(e)
         res.status(400).send(e)
     }
 })
-// made by asutosh prdhan not agrima
+
 App.get('/events', async (req, res) => {
-    if (req.quary == undefined) {
-        const events = await Events.find({})
+    if (!req.query.branch || req.query.branch == 'all') {
+        const events = await Events.find()
         try {
             res.render('schedule', { events })
         } catch (e) {
@@ -84,7 +84,7 @@ App.get('/events', async (req, res) => {
         }
     }
     else {
-        const events = await Events.find({ branch: req.quary.branch })
+        const events = await Events.find({ branch: req.query.branch })
         try {
             res.render('schedule', { events })
         } catch (e) {
@@ -92,7 +92,7 @@ App.get('/events', async (req, res) => {
         }
     }
 })
-// made by asutosh prdhan not agrima
+
 App.post('/login', async (req, res) => {
     try {
         const user = await User.findByCredentials(req.body.email, req.body.password)
@@ -102,12 +102,14 @@ App.post('/login', async (req, res) => {
         res.status(400).send()
     }
 })
-// made by asutosh prdhan not agrima
+
 App.post('/logout', auth, async (req, res) => {
+    console.log(req.user.tokens.length)
     try {
         req.user.tokens = req.user.tokens.filter((token) => {
             return token.token !== req.token
         })
+        console.log(req.user.tokens.length)
         await req.user.save()
 
         res.send()
@@ -115,7 +117,7 @@ App.post('/logout', auth, async (req, res) => {
         res.status(500).send()
     }
 })
-// made by asutosh prdhan not agrima
+
 App.get('/donate', async (req, res) => {
     try {
         res.render('donation')
@@ -123,19 +125,24 @@ App.get('/donate', async (req, res) => {
         res.status(500).send(error)
     }
 })
-// made by asutosh prdhan not agrima
-App.post('/donatesecure', async (req, res) => {
+
+App.post('/donatesecure', auth, async (req, res) => {
     //const events = await Events.find({})
-    const donate = new Donate(req.body)
+
+    const donate = new Donate({ 'amount': req.body.amount, 'address': req.body.address, 'mobile': req.body.mobile, 'owner': req.user._id })
+    console.log(donate)
     try {
-        await donate.save();
-        res.render('schedule', { events })
+        await donate.save().then((data) => {
+            console.log(data)
+        })
+        res.render('donation')
     } catch (e) {
         console.log(e)
+        res.status(500).send(e)
     }
 })
-// made by asutosh prdhan not agrima
+
 App.listen(PORT, () => {
     console.log('App started on 3000')
-}); 
+});
 

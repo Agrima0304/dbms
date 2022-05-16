@@ -26,11 +26,9 @@
 
   </head>
   <body>
-  {{#if true}}
-  {{>header}} 
-  {{else}}
-  {{>navbar}}
-  {{/if}}
+
+{{>header}}
+
 <div class="content" >
   <h1 style="color: white;">Alumni Portal</h1>
   <br>
@@ -47,7 +45,7 @@
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaY5r4xXCgijm5PQbLVONZ5ZHfeLn8EsnnFw&usqp=CAU" class="d-block w-100" alt="..." height: 100vh; width:100vw;">
     </div>
     <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="..." height: 100vh; width:100vw;">
+      <img src="https://media-exp1.licdn.com/dms/image/C4D1BAQEL-NR4SLWZ7A/company-background_10000/0/1519798588229?e=2147483647&v=beta&t=GnvcYFTegZSmUQEgTJ1Zr35DjQTVrQmKDCl42v5VUVg" class="d-block w-100" alt="..." height: 100vh; width:100vw;">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -59,6 +57,11 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div> 
+    {{#if token}}
+    <input type="text" value="{{token}}" id="token" style="display: none;">
+    <input type="text" value="{{user.name}}" id="uname" style="display: none;">
+    {{/if}}
+    {{>footer}}
   </body>
 </html>
 <script
@@ -66,3 +69,11 @@
   integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
   crossorigin="anonymous"
 ></script>
+<script>
+  if(document.getElementById('token'))
+  {
+localStorage.setItem('token',document.getElementById('token').value);
+localStorage.setItem('name',document.getElementById('uname').value);
+  }
+</script>
+

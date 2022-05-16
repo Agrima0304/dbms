@@ -32,13 +32,27 @@
           </li>
           <li class="nav-item">
             <a
-              class="nav-link active pt-2"
+              class="nav-link active pt-2 before"
               aria-current="page"
               href="#exampleModalToggle0"
               data-bs-toggle="modal"
             >Admin</a>
           </li>
 
+          <li class="nav-item">
+            <a
+              class="nav-link active pt-2 after"
+              aria-current="page"
+              href="/donate"
+            >Donate</a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link active pt-2 after"
+              aria-current="page"
+              href="/events"
+            >Events</a>
+          </li>
         </ul>
         <div
           class="modal fade"
@@ -61,8 +75,8 @@
               <div class="modal-body">
                 <form action="/adminentry" method="post">
                   <div class="mb-3">
-                    <label for="exampleInputEmail9" class="form-label">Admin Email
-                      address</label>
+                    <label for="exampleInputEmail9" class="form-label">Admin
+                      Email address</label>
                     <input
                       type="email"
                       class="form-control"
@@ -70,7 +84,7 @@
                       aria-describedby="emailHelp"
                       name="email"
                     />
-                    
+
                   </div>
                   <div class="mb-3">
                     <label
@@ -98,21 +112,36 @@
             </div>
           </div>
         </div>
-        <form class="d-flex">
-          <a
-            class="btn btn-outline-success mx-1"
-            data-bs-toggle="modal"
-            href="#exampleModalToggle1"
-            role="button"
-          >Login</a>
-          <a
-            class="btn btn-outline-primary mx-1"
-            data-bs-toggle="modal"
-            href="#exampleModalToggle2"
-            role="button"
-          >Signup</a>
 
-        </form>
+        
+        <a
+          class="btn btn-outline-light mx-1 text-light after"
+          role="button"
+        >Welcome
+          {{#if user}}
+            {{user.name}}
+          {{else}}
+            <span id="laname"></span>
+          {{/if}}</a>
+        <a
+          id="logout"
+          class="btn btn-outline-primary mx-1 text-primary after"
+          role="button"
+          onclick="clr()"
+        >Logout</a>
+        <a
+          class="btn btn-outline-success mx-1 before"
+          data-bs-toggle="modal"
+          href="#exampleModalToggle1"
+          role="button"
+        >Login</a>
+        <a
+          class="btn btn-outline-primary mx-1 before"
+          data-bs-toggle="modal"
+          href="#exampleModalToggle2"
+          role="button"
+        >Signup</a>
+
       </div>
     </div>
   </nav>
@@ -145,6 +174,7 @@
                 id="exampleInputEmail1"
                 aria-describedby="emailHelp"
                 name="email"
+                required
               />
               <div id="emailHelp" class="form-text">We'll never share your email
                 with anyone else.</div>
@@ -159,6 +189,7 @@
                 class="form-control"
                 id="exampleInputPassword1"
                 name="password"
+                required
               />
             </div>
 
@@ -207,16 +238,18 @@
                 class="form-control"
                 id="username"
                 name="name"
+                required
               />
             </div>
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <label for="exampleInputEmail8" class="form-label">Email address</label>
               <input
                 type="email"
                 class="form-control"
-                id="exampleInputEmail1"
+                id="exampleInputEmail8"
                 aria-describedby="emailHelp"
                 name="email"
+                required
               />
               <div id="emailHelp" class="form-text">We'll never share your email
                 with anyone else.</div>
@@ -229,6 +262,7 @@
                   class="form-control"
                   id="Batch"
                   name="batch"
+                  required
                 />
               </div>
               <div class="mb-3 col-6">
@@ -238,6 +272,7 @@
                   class="form-control"
                   id="roll"
                   name="roll"
+                  required
                 />
               </div>
             </div>
@@ -252,6 +287,7 @@
                 class="form-control"
                 id="exampleInputPassword2"
                 name="password"
+                required
               />
             </div>
             <div class="mb-3">
@@ -263,6 +299,7 @@
                 class="form-control"
                 id="exampleInputPassword3"
                 name="cpassword"
+                required
               />
             </div>
 
@@ -281,10 +318,45 @@
   </div>
 
 </header>
+<script
+  type="text/javascript"
+  src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"
+></script>
 <script>
-  //var checkpass = function () //{ // let A =
-  //document.getElementById('"exampleInputPassword2').value; let B =
-  //document.getElementById('"exampleInputPassword3').value; if(A===B){ return
-  //true; } // return true; //}
 
+  $(document).ready(function () { 
+    console.log('asutosh');
+    if(localStorage.token == undefined || localStorage.token == '') {
+
+
+
+
+   // console.log(localStorage.getItem('token')+ 'skuhai');
+    var
+  elems= document.getElementsByClassName('after'); for (var
+  i=0;i<elems.length;i+=1){ elems[i].style.display = 'none'; }
+
+  } else { 
+//console.log(localStorage.getItem('token')+ 'dfhjh'); var
+  elems=document.getElementsByClassName('before'); for (var
+  i=0;i<elems.length;i+=1){ elems[i].style.display = 'none'; } 
+
+
+ } 
+  
+  } )
+  
+  
+  
+  
+  
+  function clr() { console.log("formData"); var formData = { 'owner':
+  localStorage.getItem('token')
+   //for get email 
+   }; 
+   console.log(formData);
+  $.ajax({ url: "/logout", type: "post", data: formData, success: function(d) {
+  localStorage.clear();
+  location.href='/'; } }); }
+  document.getElementById('laname').innerHTML=localStorage.getItem('name')
 </script>

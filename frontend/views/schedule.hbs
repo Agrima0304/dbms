@@ -64,16 +64,17 @@ tr:nth-child(even) {
 </head>
 <body>
 <!-- partial:index.partial.html -->
-{{>navbar}}
+{{>header}}
 
     <h1>SEARCH ALUMNI ACTIVITIES/MEET</h1><br>
     <form action="events" method="get">
     <label for="f" id="f"> Branch</label>
     <select id="menu" name="branch" type="text">
-        <option>Petroleum Engineering</option>
-        <option>Chemical Engineering</option>
-        <option>Computer Science Engineering </option>
-        <option>Electronics Engineering</option>
+        <option value="all">All</option>
+        <option value="pe">Petroleum Engineering</option>
+        <option value="ce">Chemical Engineering</option>
+        <option value="cse">Computer Science Engineering </option>
+        <option value="ece">Electronics Engineering</option>
     </select>
     {{!-- <label for="y" id="y">Year</label>
     <select id="year" name="year" type="number">
@@ -101,13 +102,7 @@ tr:nth-child(even) {
         </tr>
         {{/each}}
     </table>
-  
-        
-    {{!-- {{log user}} --}}
+  {{>footer}}
     
+    </body>
 </html>
-<script>
-    
-   let token=localStorage.getItem('token',token.value);
-
-</script>
